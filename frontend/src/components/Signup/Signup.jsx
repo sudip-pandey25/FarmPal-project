@@ -139,7 +139,7 @@ const SignUp = () => {
                 type="submit"
                 className="group realtive w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-800 "
               >
-                Submit
+                Sign Up
               </button>
             </div>
 
