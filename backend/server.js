@@ -1,4 +1,6 @@
+const { connect } = require("mongoose");
 const app = require("./app");
+const connectDatabase = require("./db/Database");
 
 // Handling uncaught Exception
 process.on("uncaughtException", (err) => {
@@ -13,6 +15,9 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     path: "backend/config/.env",
   });
 }
+
+//databse
+connectDatabase();
 
 //create server
 const server = app.listen(process.env.PORT, () => {
