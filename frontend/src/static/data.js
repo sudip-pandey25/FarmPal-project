@@ -39,37 +39,37 @@ export const brandingData = [
         <path
           d="M1 1H5.63636V24.1818H35"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M8.72763 35.0002C10.4347 35.0002 11.8185 33.6163 11.8185 31.9093C11.8185 30.2022 10.4347 28.8184 8.72763 28.8184C7.02057 28.8184 5.63672 30.2022 5.63672 31.9093C5.63672 33.6163 7.02057 35.0002 8.72763 35.0002Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M31.9073 35.0002C33.6144 35.0002 34.9982 33.6163 34.9982 31.9093C34.9982 30.2022 33.6144 28.8184 31.9073 28.8184C30.2003 28.8184 28.8164 30.2022 28.8164 31.9093C28.8164 33.6163 30.2003 35.0002 31.9073 35.0002Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M34.9982 1H11.8164V18H34.9982V1Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M11.8164 7.18164H34.9982"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
       </svg>
     ),
@@ -89,15 +89,15 @@ export const brandingData = [
         <path
           d="M31 17.4502C31 25.7002 24.25 32.4502 16 32.4502C7.75 32.4502 1 25.7002 1 17.4502C1 9.2002 7.75 2.4502 16 2.4502C21.85 2.4502 26.95 5.7502 29.35 10.7002"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         ></path>
         <path
           d="M30.7 2L29.5 10.85L20.5 9.65"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
       </svg>
     ),
@@ -117,34 +117,34 @@ export const brandingData = [
         <path
           d="M7 13H5.5C2.95 13 1 11.05 1 8.5V1H7"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         ></path>
         <path
           d="M25 13H26.5C29.05 13 31 11.05 31 8.5V1H25"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         ></path>
         <path
           d="M16 28V22"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
+          strokeWidth="2"
+          strokeMiterlimit="10"
         ></path>
         <path
           d="M16 22C11.05 22 7 17.95 7 13V1H25V13C25 17.95 20.95 22 16 22Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M25 34H7C7 30.7 9.7 28 13 28H19C22.3 28 25 30.7 25 34Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
       </svg>
     ),
@@ -164,23 +164,23 @@ export const brandingData = [
         <path
           d="M22.6654 18.667H9.33203V27.0003H22.6654V18.667Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M12.668 18.6663V13.6663C12.668 11.833 14.168 10.333 16.0013 10.333C17.8346 10.333 19.3346 11.833 19.3346 13.6663V18.6663"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
         <path
           d="M31 22C31 30.3333 24.3333 37 16 37C7.66667 37 1 30.3333 1 22V5.33333L16 2L31 5.33333V22Z"
           stroke="#FFBB38"
-          stroke-width="2"
-          stroke-miterlimit="10"
-          stroke-linecap="square"
+          strokeWidth="2"
+          strokeMiterlimit="10"
+          strokeLinecap="square"
         ></path>
       </svg>
     ),
@@ -191,72 +191,73 @@ export const brandingData = [
 export const categoriesData = [
   {
     id: 1,
-    title: "Computers and Laptops",
+    title: "Tractors",
     subTitle: "",
     image_Url:
-      "https://cdn.shopify.com/s/files/1/1706/9177/products/NEWAppleMacbookProwithM1ProChip14InchLaptop2021ModelMKGQ3LL_A_16GB_1TBSSD_custommacbd.jpg?v=1659592838",
+      "https://minnuoagro.com/wp-content/uploads/2024/07/%E4%B8%BBFour-wheel-Drive-Wheeled-Tractors-LX904-Series.png",
   },
   {
     id: 2,
-    title: "cosmetics and body care",
+    title: "Insecticides",
     subTitle: "",
     image_Url:
-      "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-07/kosme1.png",
+      "https://static.vecteezy.com/system/resources/previews/031/607/122/non_2x/logo-pesticides-ai-generative-free-png.png",
   },
   {
     id: 3,
-    title: "Accesories",
+    title: "Pesticides",
     subTitle: "",
     image_Url:
-      "https://img.freepik.com/free-vector/ordering-goods-online-internet-store-online-shopping-niche-e-commerce-website-mother-buying-babies-clothes-footwear-toys-infant-accessories_335657-2345.jpg?w=2000",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjljwPjGKFh-U-c2zuqE7GNDqXh11Y9OSLYQ&s",
   },
   {
     id: 4,
-    title: "Cloths",
+    title: "Organic Fertilizers",
     subTitle: "",
     image_Url:
-      "https://www.shift4shop.com/2015/images/industries/clothing/clothing-apparel.png",
+      "https://p7.hiclipart.com/preview/859/705/104/organic-food-brand-fertilisers-organic-fertilizer-organic-product.jpg",
   },
   {
     id: 5,
-    title: "Shoes",
+    title: "Inorganic Fertilizers",
     subTitle: "",
     image_Url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvBQPQMVNRd6TtDkGs2dCri0Y-rxKkFOiEWw&usqp=CAU",
+      "https://e7.pngegg.com/pngimages/924/24/png-clipart-organic-food-nutrient-fertilisers-organic-fertilizer-estres-natural-foods-food-thumbnail.png",
   },
   {
     id: 6,
-    title: "Gifts",
+    title: "Heavy Machineries",
     subTitle: "",
     image_Url:
-      "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+      "https://w7.pngwing.com/pngs/338/125/png-transparent-john-deere-combine-harvester-tractor-combine-harvester-harvest-india-vehicle-thumbnail.png",
   },
   {
     id: 7,
-    title: "Pet Care",
+    title: "Light Machineries",
     subTitle: "",
-    image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+    image_Url:
+      "https://image.made-in-china.com/201f0j00DGSbkVMcAPqo/China-Honda-Chainsaw-Price-61-5cc-Chainsaw-78cc-Chainsaw-62cc.webp",
   },
   {
     id: 8,
-    title: "Mobile and Tablets",
+    title: "Traditional Tools",
     subTitle: "",
     image_Url:
-      "https://st-troy.mncdn.com/mnresize/1500/1500/Content/media/ProductImg/original/mpwp3tua-apple-iphone-14-256gb-mavi-mpwp3tua-637986832343472449.jpg",
+      "https://jcblhandtools.com/wp-content/uploads/2024/05/Hand-Cultivator.webp",
   },
   {
     id: 9,
-    title: "Music and Gaming",
+    title: "Seeds",
     subTitle: "",
     image_Url:
-      "https://static.vecteezy.com/system/resources/previews/011/996/555/original/3d-black-headphone-illustration-ecommerce-icon-png.png",
+      "https://cpng.pikpng.com/pngl/s/166-1662347_as-featured-in-house-beautiful-magazine-we-chose.png",
   },
   {
     id: 10,
-    title: "Others",
+    title: "Modern Tools",
     subTitle: "",
     image_Url:
-      "https://searchspring.com/wp-content/uploads/2022/10/Hero-Image-Platform-Others-2.png",
+      "https://w7.pngwing.com/pngs/929/763/png-transparent-fieldking-h-o-unit-2-no-till-farming-agriculture-disc-harrow-seed-drill-tractor-orange-india-agriculture-thumbnail.png",
   },
 ];
 
@@ -264,182 +265,179 @@ export const categoriesData = [
 export const productData = [
   {
     id: 1,
-    category: "Computers and Laptops",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space-gray color with apple 1 year warranty",
+    category: "Tractors",
+    name: "MK3004 WHEEL TRACTOR",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "  16 Inch Reinforced Clutch , Luxury Surround Shadow Cab , Heavy-duty Transmission Chassis,LCD Wake-up Function Meter   ",
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://static.vecteezy.com/system/resources/previews/027/291/395/original/an-isolated-green-tractor-on-a-transparent-background-free-png.png",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://static.vecteezy.com/system/resources/previews/027/291/395/original/an-isolated-green-tractor-on-a-transparent-background-free-png.png",
       },
     ],
     shop: {
-      name: "Apple inc.",
+      name: "Shandong Junmadao Machinery",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
     },
-    price: 1099,
-    discount_price: 1049,
+    price: 10998,
+    discount_price: 10499,
     rating: 4,
     total_sell: 35,
     stock: 10,
   },
   {
     id: 2,
-    category: "Mobile and Tablets",
-    name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
+    category: "Insecticides",
+    name: "Yamraj 500 ML Tolfenpyrad 15% Ec",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "TOLFENPYRAD 15% EC , 40 ML / 15 LITERS WATER, Aphids, Jassids and Thrips",
     image_Url: [
       {
         public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1676864837548870134.webp",
       },
       {
         public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1676864837548870134.webp",
       },
     ],
     shop: {
-      name: "Amazon Ltd",
+      name: "GSP Crop Science Pvt. Ltd.",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
     },
-    discount_price: 1099,
+    discount_price: 10,
     rating: 5,
     total_sell: 80,
     stock: 10,
-    category: "Mobile & Tablets",
   },
   {
     id: 1,
-    category: "Computers and Laptop",
-    name: "MacBook pro M2 chipset 256gb ssd 8gb ram space gray color with apple 1 year warranty",
+    category: "Pesticides",
+    name: "Vanguard 1500",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "White flies, Aphid, Jassids, Hoppers, Thrips, Red Mites, White & Yellow mites, Leaf Rollers, Caterpillars, Beetles, Bugs, Borers, Flies, Weevils, Gall Midge, Leaf Folders and Fungus Gnats.",
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://www.agrowala.com/theme/images/product/img_1388876614_1562239881.jpg",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://www.agrowala.com/theme/images/product/img_1388876614_1562239881.jpg",
       },
     ],
     shop: {
-      name: "Apple inc.",
+      name: "Agriland Biotech",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
     },
-    price: 1099,
-    discount_price: 1049,
+    price: 30,
+    discount_price: 28,
     rating: 4,
     total_sell: 75,
     stock: 10,
-    category: "Computers & Laptop",
   },
   {
     id: 4,
-    category: "Others",
-    name: "New Fashionable Watch for men 2023 with multiple colors",
+    category: "Modern Tools",
+    name: "Regular Secateur",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Powerful Anvil Secateur - have only one blade, which closes onto a flat surface; unlike bypass blades it can be sharpened from both sides and remains reliable when slightly blunt. Useful for cutting thick branches; one can bite into the stem from one direction, swing the handle around and bite further through narrowed wood from another direction. The anvil is made of a material softer than the blade, so that the blade is not damaged when it meets the anvil.",
     image_Url: [
       {
         public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+        url: "https://www.agrowala.com/theme/images/product/img_1629728290689701712.webp",
       },
       {
         public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+        url: "https://www.agrowala.com/theme/images/product/img_1629728290689701712.webp",
       },
     ],
     shop: {
-      name: "Shahriar Watch House",
+      name: "FALCON GARDEN TOOLS PVT. LTD.",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
-      category: "Others",
+      category: "Modern Tools",
     },
-    price: 100,
-    discount_price: 79,
+    price: 10,
+    discount_price: 95,
     rating: 4,
     total_sell: 12,
     stock: 10,
   },
   {
     id: 5,
-    category: "Shoes",
-    name: "New Trend shoes for gents with all sizes",
+    category: "Heavy Machineries",
+    name: " COMBINE HARVESTOR ",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Brand: FM World (Muktinath Krishi Company Limited, sole distributor of FM World) Model: 4LZ-4.0E Design: Self-propelled Crawler Type Whole Feed Overall Working Capacity: 0.33-0.66hector/hr. Engine: 4 stroke, Water cooled, 85hp, 2600rpm",
     image_Url: [
       {
         public_id: "test",
-        url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/98/gZHWEM0IbSJm3A5BOeumrOZPCVOy4m1knpmsC4wH.jpg",
       },
       {
         public_id: "test",
-        url: "https://mirzacdns3.s3.ap-south-1.amazonaws.com/cache/catalog/RLV0015/2-800x800.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/98/yUaA1skwn4mRXQmtFQarRSCIyqUk78uFG8EFMNIy.jpg",
       },
     ],
     shop: {
-      name: "Alisha Shoes Mart",
+      name: "Muktinath Krishi Company Limited",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
     },
-    price: 120,
-    discount_price: 89,
+    price: 36250,
+    discount_price: 36150,
     rating: 5,
     total_sell: 49,
     stock: 10,
-    category: "Shoes",
   },
   {
     id: 1,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    name: "Legend (Potash) 4 Gm 20% Organic Potash",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "	It improves key plant functions. Helps in activation of growth-related hormones & improves drought resistance. It improves shape, size, color and taste of produce. It improves nutrient uptake and fertilizer use efficiency. It increases yield and quality of produce",
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1187736822_1573734121.jpg",
       },
       {
         public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1187736822_1573734121.jpg",
       },
     ],
     shop: {
-      name: "Asus Ltd",
+      name: "FMC India Private Limited",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
       },
       ratings: 4.2,
     },
-    price: 300,
-    discount_price: 239,
+    price: 3,
+    discount_price: 2,
     rating: 4.5,
     reviews: [
       {
@@ -452,25 +450,24 @@ export const productData = [
     ],
     total_sell: 20,
     stock: 10,
-    category: "Music and Gaming",
+    category: "Organic Fertilizers",
   },
   {
     id: 4,
-    name: "New Fashionable Watch for men 2023 with multiple colors",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    name: "Chain Saw CS-62",
+    description: "Engine Displacement: 62 cc Power/RPM: 2.6 Kw/8500 Bar: 24”",
     image_Url: [
       {
         public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+        url: "https://muktinathkrishi.com/cache/large/product/68/IsfqTkaKNq9OSQAinNZzkq8CajTELAgz1ZJG5Jte.png",
       },
       {
         public_id: "test",
-        url: "https://i0.wp.com/eccocibd.com/wp-content/uploads/2022/01/1802NL02_1.png?fit=550%2C550&ssl=1",
+        url: "https://muktinathkrishi.com/cache/large/product/68/IsfqTkaKNq9OSQAinNZzkq8CajTELAgz1ZJG5Jte.png",
       },
     ],
     shop: {
-      name: "Shahriar Watch House",
+      name: "Muktinath Krishi Company",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
@@ -485,17 +482,18 @@ export const productData = [
   },
   {
     id: 1,
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    name: "Tomato",
+    category: "Seeds",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Variety: Srijana F1 Hybrid / Khumal Golveda Hybrid-2, 3 Package Available: 2 gm",
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/70/vEx7u9u3SRlJQMsgiitBE283sBuycpci2QGRXUVh.png",
       },
       {
         public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/70/vEx7u9u3SRlJQMsgiitBE283sBuycpci2QGRXUVh.png",
       },
     ],
     shop: {
@@ -506,8 +504,8 @@ export const productData = [
       },
       ratings: 4.2,
     },
-    price: 300,
-    discount_price: 239,
+    price: 0.3,
+    discount_price: 0.2,
     rating: 4.5,
     reviews: [
       {
@@ -523,22 +521,22 @@ export const productData = [
   },
   {
     id: 2,
-    category: "Mobile and Tablets",
-    name: "Iphone 14 pro max 256 gb ssd and 8 gb ram silver colour",
+    category: "Insecticides",
+    name: "M-BENZO MAX",
     description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+      "Composition: Emamectin Benzoate 5.7% WDG,Package Available: 5 gm, Target Crop: Tomato, Eggplant, Vegetables, Maize etc. ",
     image_Url: [
       {
         public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/16239/qN0moSnKtrVsdD1GU4q9WzSKZXODNqTLFX2cIGiN.jpg",
       },
       {
         public_id: "test",
-        url: "https://m.media-amazon.com/images/I/31Vle5fVdaL.jpg",
+        url: "https://muktinathkrishi.com/cache/large/product/16239/qN0moSnKtrVsdD1GU4q9WzSKZXODNqTLFX2cIGiN.jpg",
       },
     ],
     shop: {
-      name: "Amazon Ltd",
+      name: "Muktinath",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
@@ -552,22 +550,21 @@ export const productData = [
   },
   {
     id: 1,
-    category: "Music and Gaming",
+    category: "Microbor 1 Kg ",
     name: "Gaming Headphone Asus with mutiple color and free delivery",
-    description:
-      "Product details are a crucial part of any eCommerce website or online marketplace. These details help the potential customers to make an informed decision about the product they are interested in buying. A well-written product description can also be a powerful marketing tool that can help to increase sales.Product details typically include information about the product's features, specifications, dimensions, weight, materials, and other relevant information that can help customers to understand the product better. The product details section should also include high-quality images and videos of the product, as well as customer reviews and ratings.",
+    description: "Microboron 20%",
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h763d/h763d-02-500x500.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1650259516273084980.webp",
       },
       {
         public_id: "test",
-        url: "https://eratablet.com/wp-content/uploads/2022/08/H51ba6537405f4948972e293927673546u.jpg",
+        url: "https://www.agrowala.com/theme/images/product/img_1650259516273084980.webp",
       },
     ],
     shop: {
-      name: "Asus Ltd",
+      name: "Vanita Agro",
       shop_avatar: {
         public_id: "test",
         url: "https://www.hatchwise.com/wp-content/uploads/2022/05/amazon-logo-1024x683.png",
@@ -613,16 +610,16 @@ export const footerProductLinks = [
 
 export const footercompanyLinks = [
   {
-    name: "Game & Video",
+    name: "Insecticides",
   },
   {
-    name: "Phone &Tablets",
+    name: "Pesticides",
   },
   {
-    name: "Computers & Laptop",
+    name: "Machineries",
   },
   {
-    name: "Sport Watches",
+    name: "Fertilizers",
   },
   {
     name: "Events",
