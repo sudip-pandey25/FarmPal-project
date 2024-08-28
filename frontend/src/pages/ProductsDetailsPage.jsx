@@ -17,7 +17,7 @@ const ProductsDetailsPage = () => {
 
   return (
     <div>
-      <Header />
+      <Header activeHeading={3} />
       <ProductDetails data={data} />
       <Footer />
     </div>

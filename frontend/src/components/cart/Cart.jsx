@@ -8,17 +8,17 @@ import { Link } from "react-router-dom";
 const Cart = ({ setOpenCart }) => {
   const cartData = [
     {
-      name: "Iphone 14 pro max 256 ssd and 8gb ram silver color",
+      name: "Vanguard 1500",
       description: "test",
       price: 999,
     },
     {
-      name: "Iphone 14 pro max 256 ssd and 8gb ram silver color",
+      name: "Vanguard 1500",
       description: "test",
       price: 241,
     },
     {
-      name: "Iphone 14 pro max 256 ssd and 8gb ram silver color",
+      name: "Vanguard 1500",
       description: "test",
       price: 845,
     },

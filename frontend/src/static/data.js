@@ -296,7 +296,7 @@ export const productData = [
   {
     id: 2,
     category: "Insecticides",
-    name: "Yamraj 500 ML Tolfenpyrad 15% Ec",
+    name: "Yamraj 500 ML Tolfenpyrad 15per Ec",
     description:
       "TOLFENPYRAD 15% EC , 40 ML / 15 LITERS WATER, Aphids, Jassids and Thrips",
     image_Url: [
@@ -377,7 +377,7 @@ export const productData = [
       ratings: 4.2,
       category: "Modern Tools",
     },
-    price: 10,
+    price: 110,
     discount_price: 95,
     rating: 4,
     total_sell: 12,
@@ -415,7 +415,7 @@ export const productData = [
   },
   {
     id: 1,
-    name: "Legend (Potash) 4 Gm 20% Organic Potash",
+    name: "Legend Potash 4 Gm 20per Organic Potash",
     description:
       "	It improves key plant functions. Helps in activation of growth-related hormones & improves drought resistance. It improves shape, size, color and taste of produce. It improves nutrient uptake and fertilizer use efficiency. It increases yield and quality of produce",
     image_Url: [
@@ -454,7 +454,7 @@ export const productData = [
   },
   {
     id: 4,
-    name: "Chain Saw CS-62",
+    name: "Chain Saw CS 62",
     description: "Engine Displacement: 62 cc Power/RPM: 2.6 Kw/8500 Bar: 24”",
     image_Url: [
       {
@@ -522,7 +522,7 @@ export const productData = [
   {
     id: 2,
     category: "Insecticides",
-    name: "M-BENZO MAX",
+    name: "M BENZO MAX",
     description:
       "Composition: Emamectin Benzoate 5.7% WDG,Package Available: 5 gm, Target Crop: Tomato, Eggplant, Vegetables, Maize etc. ",
     image_Url: [
@@ -550,8 +550,8 @@ export const productData = [
   },
   {
     id: 1,
-    category: "Microbor 1 Kg ",
-    name: "Gaming Headphone Asus with mutiple color and free delivery",
+    category: "Organic Fertilizer",
+    name: "Microbor 1 Kg ",
     description: "Microboron 20%",
     image_Url: [
       {
