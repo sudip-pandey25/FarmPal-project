@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { backend_url } from "../../server";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { backend_url, server } from "../../server";
+import { useDispatch, useSelector } from "react-redux";
 import {
   AiFillCamera,
   AiOutlineArrowRight,
@@ -11,18 +11,57 @@ import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 import { DataGrid } from "@material-ui/data-grid";
 import { MdOutlineTrackChanges } from "react-icons/md";
+import {
+  deleteUserAddress,
+  updateUserInformation,
+  updatUserAddress,
+} from "../../redux/actions/user";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { Country, State } from "country-state-city";
+import { RxCross1 } from "react-icons/rx";
 
 const ProfileContent = ({ active }) => {
-  const { user } = useSelector((state) => state.user);
+  const { user, error } = useSelector((state) => state.user);
   const [name, setName] = useState(user && user.name);
   const [email, setEmail] = useState(user && user.email);
-  const [phoneNumber, setPhoneNumber] = useState();
-  const [zipCode, setZipCode] = useState();
-  const [address1, setAddress1] = useState("");
-  const [address2, setAddress2] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState(user && user.phoneNumber);
+  const [password, setPassword] = useState();
+  const [avatar, setAvatar] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+    }
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(updateUserInformation(name, email, phoneNumber, password));
+  };
+
+  const handleImage = async (e) => {
+    const file = e.target.files[0];
+    setAvatar(file);
+
+    const formData = new FormData();
+
+    formData.append("image", e.target.files[0]);
+
+    await axios
+      .put(`${server}/user/update-avatar`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+        withCredentials: true,
+      })
+      .then((response) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        toast.error(error);
+      });
   };
 
   return (
@@ -38,7 +77,15 @@ const ProfileContent = ({ active }) => {
                 className="w-[150px] h-[150px] rounded-full object-cover border-[3px] border-[#272927] "
               />
               <div className=" w-[30px] h-[30px] bg-[#e3e9ee] rounded-full flex items-center justify-center cursor-pointer absolute bottom-[5px] right-[5px]">
-                <AiFillCamera />
+                <input
+                  type="file"
+                  id="image"
+                  className="hidden"
+                  onChange={handleImage}
+                />
+                <label htmlFor="image">
+                  <AiFillCamera />
+                </label>
               </div>
             </div>
           </div>
@@ -80,38 +127,22 @@ const ProfileContent = ({ active }) => {
                   />
                 </div>
                 <div className="w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Zip Code</label>
+                  <label className="block pb-2"> Enter Your Password</label>
                   <input
-                    type="number"
+                    type="password"
                     className={`${styles.input} !w-[95%] mb-4 800px:mb-0 `}
                     required
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
-              <div className="w-full 800px:flex pb-3">
-                <div className="w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Address 1</label>
-                  <input
-                    type="address"
-                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0 `}
-                    required
-                    value={address1}
-                    onChange={(e) => setAddress1(e.target.value)}
-                  />
-                </div>
-                <div className="w-[100%] 800px:w-[50%]">
-                  <label className="block pb-2">Address 2</label>
-                  <input
-                    type="address"
-                    className={`${styles.input} !w-[95%] mb-4 800px:mb-0 `}
-                    required
-                    value={address2}
-                    onChange={(e) => setAddress2(e.target.value)}
-                  />
-                </div>
-              </div>
+              <input
+                className={`${styles.button} text-[#fff] rounded-[3px] mt-8 cursor-pointer`}
+                required
+                value="Update"
+                type="submit"
+              />
             </form>
           </div>
         </>
@@ -126,7 +157,7 @@ const ProfileContent = ({ active }) => {
       {active === 5 && <TrackOrder />}
 
       {/*Payement */}
-      {active === 6 && <PayementMethod />}
+      {active === 6 && <ChangePassword />}
 
       {/*Address*/}
       {active === 7 && <Address />}
@@ -394,65 +425,323 @@ const TrackOrder = () => {
   );
 };
 
-const PayementMethod = () => {
+const ChangePassword = () => {
+  const [oldPassword, setOldPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const passwordChangeHandler = async (e) => {
+    e.preventDefault();
+
+    await axios
+      .put(
+        `${server}/user/update-user-password`,
+        { oldPassword, newPassword, confirmPassword },
+        { withCredentials: true }
+      )
+      .then((res) => {
+        toast.success("Password Change Successful");
+        setOldPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+      });
+  };
   return (
-    <div className=" w-full px-5 ">
-      <div className="flex w-full items-center justify-between">
-        <h1 className="text-[25px] font-[600] text-[#241d1d] ">
-          Payment Methods
-        </h1>
-        <div className={`${styles.button} !rounded-md `}>
-          {" "}
-          <span className="text-[#fff]"> Add New </span>
-        </div>
-      </div>
-      <br />
-      <div className="w-full bg-white h-[70px] rounded-[4px] flex items-center px-3 shadow justify-between pr-10">
-        <div className="flex items-center">
-          <img
-            src="https://1000logos.net/wp-content/uploads/2017/06/VISA-Logo-1976.png"
-            alt=""
-            className="h-[30px] w-auto"
-          />
-          <h5 className="pl-5 font-[600]  ">Sudip Shakya</h5>
-        </div>
-        <div className="pl-5 flex items-center">
-          <h6>123 4567 789</h6>
-          <h5 className="pl-6"> 08/2025 </h5>
-        </div>
-        <div className="min-w-[10%] flex items-center justify-between pl-8 ">
-          <AiOutlineDelete size={25} className="cursor-pointer" />
-        </div>
+    <div className="w-full px-5">
+      <h1 className="block text-[25px] text-center font-[600] text-[#000000ba] pb-2">
+        Change Password
+      </h1>
+      <div className="w-full">
+        <form
+          aria-required
+          onSubmit={passwordChangeHandler}
+          className="flex flex-col items-center"
+        >
+          <div className=" w-[100%] 800px:w-[50%] mt-5">
+            <label className="block pb-2">Enter your old password</label>
+            <input
+              type="password"
+              className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+              required
+              value={oldPassword}
+              onChange={(e) => setOldPassword(e.target.value)}
+            />
+          </div>
+          <div className=" w-[100%] 800px:w-[50%] mt-2">
+            <label className="block pb-2">Enter your new password</label>
+            <input
+              type="password"
+              className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+              required
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+            />
+          </div>
+          <div className=" w-[100%] 800px:w-[50%] mt-2">
+            <label className="block pb-2">Confirm the password</label>
+            <input
+              type="password"
+              className={`${styles.input} !w-[95%] mb-4 800px:mb-0`}
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <input
+              className={`${styles.button}w-[95%] h-[40px] border  text-center text-[#fcfcfc] rounded-[3px] mt-8 cursor-pointer`}
+              required
+              value="Update"
+              type="submit"
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
 };
 
 const Address = () => {
+  const [open, setOpen] = useState(false);
+  const [country, setCountry] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState();
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [addressType, setAddressType] = useState("");
+  const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const addressTypeData = [
+    {
+      name: "Default",
+    },
+    {
+      name: "Home",
+    },
+    {
+      name: "Office",
+    },
+  ];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (addressType === "" || country === "" || city === "") {
+      toast.error("Please fill all the fields!");
+    } else {
+      dispatch(
+        updatUserAddress(
+          country,
+          city,
+          address1,
+          address2,
+          zipCode,
+          addressType
+        )
+      );
+      setOpen(false);
+      setCountry("");
+      setCity("");
+      setAddress1("");
+      setAddress2("");
+      setZipCode(null);
+      setAddressType("");
+    }
+  };
+
+  const handleDelete = (item) => {
+    const id = item._id;
+    dispatch(deleteUserAddress(id));
+    toast.success("Deleted Successfully");
+  };
+
   return (
-    <div className=" w-full px-5 ">
+    <div className="w-full px-5">
+      {open && (
+        <div className="fixed w-full h-screen bg-[#0000004b] top-0 left-0 flex items-center justify-center ">
+          <div className="w-[35%] h-[80vh] bg-white rounded shadow relative overflow-y-scroll">
+            <div className="w-full flex justify-end p-3">
+              <RxCross1
+                size={30}
+                className="cursor-pointer"
+                onClick={() => setOpen(false)}
+              />
+            </div>
+            <h1 className="text-center text-[25px] font-Poppins">
+              Add New Address
+            </h1>
+            <div className="w-full">
+              <form aria-required onSubmit={handleSubmit} className="w-full">
+                <div className="w-full block p-4">
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Country</label>
+                    <select
+                      name=""
+                      id=""
+                      value={country}
+                      onChange={(e) => setCountry(e.target.value)}
+                      className="w-[95%] border h-[40px] rounded-[5px]"
+                    >
+                      <option value="" className="block border pb-2">
+                        choose your country
+                      </option>
+                      {Country &&
+                        Country.getAllCountries().map((item) => (
+                          <option
+                            className="block pb-2"
+                            key={item.isoCode}
+                            value={item.isoCode}
+                          >
+                            {item.name}
+                          </option>
+                        ))}
+                    </select>
+                  </div>
+
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Choose your City</label>
+                    <select
+                      name=""
+                      id=""
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      className="w-[95%] border h-[40px] rounded-[5px]"
+                    >
+                      <option value="" className="block border pb-2">
+                        choose your city
+                      </option>
+                      {State &&
+                        State.getStatesOfCountry(country).map((item) => (
+                          <option
+                            className="block pb-2"
+                            key={item.isoCode}
+                            value={item.isoCode}
+                          >
+                            {item.name}
+                          </option>
+                        ))}
+                    </select>
+                  </div>
+
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Address 1</label>
+                    <input
+                      type="address"
+                      className={`${styles.input}`}
+                      required
+                      value={address1}
+                      onChange={(e) => setAddress1(e.target.value)}
+                    />
+                  </div>
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Address 2</label>
+                    <input
+                      type="address"
+                      className={`${styles.input}`}
+                      required
+                      value={address2}
+                      onChange={(e) => setAddress2(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Zip Code</label>
+                    <input
+                      type="number"
+                      className={`${styles.input}`}
+                      required
+                      value={zipCode}
+                      onChange={(e) => setZipCode(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="w-full pb-2">
+                    <label className="block pb-2">Address Type</label>
+                    <select
+                      name=""
+                      id=""
+                      value={addressType}
+                      onChange={(e) => setAddressType(e.target.value)}
+                      className="w-[95%] border h-[40px] rounded-[5px]"
+                    >
+                      <option value="" className="block border pb-2">
+                        Choose your Address Type
+                      </option>
+                      {addressTypeData &&
+                        addressTypeData.map((item) => (
+                          <option
+                            className="block pb-2"
+                            key={item.name}
+                            value={item.name}
+                          >
+                            {item.name}
+                          </option>
+                        ))}
+                    </select>
+                  </div>
+
+                  <div className=" w-full pb-2">
+                    <input
+                      type="submit"
+                      className={`${styles.input} mt-5 cursor-pointer`}
+                      required
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-[25px] font-[600] text-[#241d1d] ">My Addresses</h1>
-        <div className={`${styles.button} !rounded-md `}>
-          {" "}
-          <span className="text-[#fff]"> Add New </span>
+        <h1 className="text-[25px] font-[600] text-[#000000ba] pb-2">
+          My Addresses
+        </h1>
+        <div
+          className={`${styles.button} !rounded-md`}
+          onClick={() => setOpen(true)}
+        >
+          <span className="text-[#fff]">Add New</span>
         </div>
       </div>
       <br />
-      <div className="w-full bg-white h-[70px] rounded-[4px] flex items-center px-3 shadow justify-between pr-10">
-        <div className="flex items-center">
-          <h5 className="pl-5 font-[600]  ">Default Address</h5>
-        </div>
-        <div className="pl-5 flex items-center">
-          <h6>878 Butwal Yogikuti, Petrol pump</h6>
-        </div>
-        <div className="pl-5 flex items-center">
-          <h6>(+977) 9800000000 </h6>
-        </div>
-        <div className="min-w-[10%] flex items-center justify-between pl-8 ">
-          <AiOutlineDelete size={25} className="cursor-pointer" />
-        </div>
-      </div>
+      {user &&
+        user.addresses.map((item, index) => (
+          <div
+            className="w-full bg-white h-min 800px:h-[70px] rounded-[4px] flex items-center px-3 shadow justify-between pr-10 mb-5"
+            key={index}
+          >
+            <div className="flex items-center">
+              <h5 className="pl-5 font-[600]">{item.addressType}</h5>
+            </div>
+            <div className="pl-8 flex items-center">
+              <h6 className="text-[12px] 800px:text-[unset]">
+                {item.address1} {item.address2}
+              </h6>
+            </div>
+            <div className="pl-8 flex items-center">
+              <h6 className="text-[12px] 800px:text-[unset]">
+                {user && user.phoneNumber}
+              </h6>
+            </div>
+            <div className="min-w-[10%] flex items-center justify-between pl-8">
+              <AiOutlineDelete
+                size={25}
+                className="cursor-pointer"
+                onClick={() => handleDelete(item)}
+              />
+            </div>
+          </div>
+        ))}
+
+      {user && user.addresses.length === 0 && (
+        <h5 className="text-center pt-8 text-[18px]">
+          You not have any saved address!
+        </h5>
+      )}
     </div>
   );
 };

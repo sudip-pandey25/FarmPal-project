@@ -15,10 +15,12 @@ import {
   ShopCreate,
   SellerActivationPage,
   ShopLoginPage,
+  PayementPage,
+  OrderSuccessPage,
 } from "./routes/Routes.js";
 import { Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Store from "./redux/store.js";
 import "react-toastify/dist/ReactToastify.css";
 import { loadSeller, loadUser } from "./redux/actions/user";
@@ -36,18 +38,44 @@ import {
 } from "./routes/ShopRoutes.js";
 import { getAllProducts } from "./redux/actions/product.js";
 import { getAllEvents } from "./redux/actions/event.js";
+import { server } from "./server";
+import axios from "axios";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 function App() {
+  const [stripeApikey, setStripeApiKey] = useState();
+
+  async function getStripeApikey() {
+    const { data } = await axios.get(`${server}/payment/stripeapikey`);
+    setStripeApiKey(data.stripeApikey);
+  }
+
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
+    getStripeApikey();
   }, []);
 
   return (
     <>
       <BrowserRouter>
+        {stripeApikey && (
+          <Elements stripe={loadStripe(stripeApikey)}>
+            <Routes>
+              <Route
+                path="/payment"
+                element={
+                  <ProtectedRoute>
+                    <PayementPage />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </Elements>
+        )}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -81,9 +109,11 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route path="/shop-create" element={<ShopCreate />} />
           <Route path="/shop-login" element={<ShopLoginPage />} />
           <Route path="/shop/preview/:id" element={<ShopPreviewPage />} />
+          <Route path="/order/success" element={<OrderSuccessPage />} />
           <Route
             path="/shop/:id"
             element={

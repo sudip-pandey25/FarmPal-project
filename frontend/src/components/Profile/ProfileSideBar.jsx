@@ -12,6 +12,7 @@ import { TbAddressBook } from "react-icons/tb";
 import { server } from "../../server";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 const ProfileSideBar = ({ active, setActive }) => {
   const navigate = useNavigate();
@@ -99,13 +100,13 @@ const ProfileSideBar = ({ active, setActive }) => {
         className="flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(6)}
       >
-        <AiOutlineCreditCard size={20} color={active === 6 ? "green" : ""} />
+        <RiLockPasswordLine size={20} color={active === 6 ? "green" : ""} />
         <span
           className={`pl-3 ${
             active === 6 ? "text-green-800" : ""
           } 800px:block hidden`}
         >
-          Payment Methods
+          Change Password
         </span>
       </div>
       <div
