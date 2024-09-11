@@ -9,13 +9,12 @@ import styles from "../../styles/styles";
 import Loader from "../Layout/Loader";
 import { server } from "../../server";
 import { toast } from "react-toastify";
-import { getAllProductsShop } from "../../redux/actions/product";
 
-const AllCoupouns = () => {
+const AllCoupons = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [coupouns, setCoupouns] = useState([]);
+  const [coupouns,setCoupouns] = useState([]);
   const [minAmount, setMinAmout] = useState(null);
   const [maxAmount, setMaxAmount] = useState(null);
   const [selectedProducts, setSelectedProducts] = useState(null);
@@ -28,7 +27,7 @@ const AllCoupouns = () => {
   useEffect(() => {
     setIsLoading(true);
     axios
-      .get(`${server}/coupoun/get-coupon/${seller._id}`, {
+      .get(`${server}/coupon/get-coupon/${seller._id}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -41,13 +40,9 @@ const AllCoupouns = () => {
   }, [dispatch]);
 
   const handleDelete = async (id) => {
-    axios
-      .delete(`${server}/coupoun/delete-coupon/${id}`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        toast.success("Coupon code deleted succesfully!");
-      });
+    axios.delete(`${server}/coupon/delete-coupon/${id}`,{withCredentials: true}).then((res) => {
+      toast.success("Coupon code deleted succesfully!")
+    })
     window.location.reload();
   };
 
@@ -56,7 +51,7 @@ const AllCoupouns = () => {
 
     await axios
       .post(
-        `${server}/coupoun/create-coupon-code`,
+        `${server}/coupon/create-coupon-code`,
         {
           name,
           minAmount,
@@ -68,9 +63,9 @@ const AllCoupouns = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        toast.success("Coupon code created successfully!");
-        setOpen(false);
-        window.location.reload();
+       toast.success("Coupon code created successfully!");
+       setOpen(false);
+       window.location.reload();
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -113,7 +108,7 @@ const AllCoupouns = () => {
   const row = [];
 
   coupouns &&
-    coupouns.forEach((item) => {
+  coupouns.forEach((item) => {
       row.push({
         id: item._id,
         name: item.name,
@@ -250,4 +245,4 @@ const AllCoupouns = () => {
   );
 };
 
-export default AllCoupouns;
+export default AllCoupons;

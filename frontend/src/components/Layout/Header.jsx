@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/styles";
-import { categoriesData, productData } from "../../static/data";
+import { categoriesData} from "../../static/data";
 import {
   AiOutlineHeart,
   AiOutlineSearch,
@@ -31,7 +31,7 @@ const Header = ({ activeHeading }) => {
   const [openCart, setOpenCart] = useState(false);
   const [openWishlist, setOpenWishlist] = useState(false);
   const [open, setOpen] = useState(false);
-  console.log(user);
+  
 
   const handleSearchChange = (e) => {
     const term = e.target.value;
@@ -60,7 +60,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <Link to="/">
               <img
-                src="sdsdad.png"
+                src="https://i.ibb.co/WfmHdHQ/sdsdad.png"
                 alt="Farmpal"
                 className=" h-12 w-full object-contain "
               />
@@ -220,7 +220,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <Link to="/">
               <img
-                src="https://shopo.quomodothemes.website/assets/images/logo.svg"
+                src="sdsdad.png"
                 alt=""
                 className="mt-3 cursor-pointer"
               />
