@@ -3,9 +3,8 @@ const { isSeller, isAuthenticated, isAdmin } = require("../middleware/auth");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const router = express.Router();
 const Product = require("../model/product");
-//const Order = require("../model/order");
+const Order = require("../model/order");
 const Shop = require("../model/shop");
-//const cloudinary = require("cloudinary");
 const ErrorHandler = require("../utils/Errorhandler");
 const { upload } = require("../multer");
 const order = require("../model/order");
@@ -153,7 +152,7 @@ router.put(
 
       await product.save({ validateBeforeSave: false });
 
-      await order.findByIdAndUpdate(
+      await Order.findByIdAndUpdate(
         orderId,
         { $set: { "cart.$[elem].isReviewed": true } },
         { arrayFilters: [{ "elem._id": productId }], new: true }

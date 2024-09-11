@@ -40,8 +40,23 @@ const OrderDetails = () => {
         toast.error(error.response.data.message);
       });
   }
-
-  console.log(data);
+  const refundOrderUpdateHandler = async (e) => {
+    await axios
+    .put(
+      `${server}/order/order-refund-success/${id}`,
+      {
+        status,
+      },
+      { withCredentials: true }
+    )
+    .then((res) => {
+      toast.success("Order updated!");
+      dispatch(getAllOrdersOfShop(seller._id));
+    })
+    .catch((error) => {
+      toast.error(error.response.data.message);
+    });
+  }
 
   return (
     <div className={`py-4 min-h-screen ${styles.section}`}>
@@ -148,10 +163,34 @@ const OrderDetails = () => {
               ))}
           </select>
         )}
+        {
+        data?.status === "Processing refund" || data?.status === "Refund Success" ? (
+          <select value={status} 
+       onChange={(e) => setStatus(e.target.value)}
+       className="w-[200px] mt-2 border h-[35px] rounded-[5px]"
+      >
+        {[
+            "Processing refund",
+            "Refund Success",
+          ]
+            .slice(
+              [
+                "Processing refund",
+                "Refund Success",
+              ].indexOf(data?.status)
+            )
+            .map((option, index) => (
+              <option value={option} key={index}>
+                {option}
+              </option>
+            ))}
+      </select>
+        ) : null
+      }
 
       <div
         className={`${styles.button} mt-5 !rounded-[4px] text-[#fff] font-[600] !h-[45px] text-[18px]`}
-        onClick={orderUpdateHandler}
+        onClick={data?.status !== "Processing refund" ? orderUpdateHandler : refundOrderUpdateHandler}
       >
         Update Status
       </div>
