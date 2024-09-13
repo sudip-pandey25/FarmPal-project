@@ -91,27 +91,27 @@ const ProductDetails = ({ data }) => {
 
   const averageRating = avg.toFixed(2);
 
-  // const handleMessageSubmit = async () => {
-  //   if (isAuthenticated) {
-  //     const groupTitle = data._id + user._id;
-  //     const userId = user._id;
-  //     const sellerId = data.shop._id;
-  //     await axios
-  //       .post(`${server}/conversation/create-new-conversation`, {
-  //         groupTitle,
-  //         userId,
-  //         sellerId,
-  //       })
-  //       .then((res) => {
-  //         navigate(`/inbox?${res.data.conversation._id}`);
-  //       })
-  //       .catch((error) => {
-  //         toast.error(error.response.data.message);
-  //       });
-  //   } else {
-  //     toast.error("Please login to create a conversation");
-  //   }
-  // };
+  const handleMessageSubmit = async () => {
+    if (isAuthenticated) {
+      const groupTitle = data._id + user._id;
+      const userId = user._id;
+      const sellerId = data.shop._id;
+      await axios
+        .post(`${server}/conversation/create-new-conversation`, {
+          groupTitle,
+          userId,
+          sellerId,
+        })
+        .then((res) => {
+          navigate(`/inbox?${res.data.conversation._id}`);
+        })
+        .catch((error) => {
+          toast.error(error.response.data.message);
+        });
+    } else {
+      toast.error("Please login to create a conversation");
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -226,7 +226,7 @@ const ProductDetails = ({ data }) => {
                   </div>
                   <div
                     className={`${styles.button} bg-[#6443d1] mt-4 !rounded !h-11`}
-                    // onClick={handleMessageSubmit}
+                    onClick={handleMessageSubmit}
                   >
                     <span className="text-white flex items-center">
                       Send Message <AiOutlineMessage className="ml-1" />
@@ -313,7 +313,7 @@ const ProductDetailsInfo = (
         {active === 2 ? (
           <div className="w-full min-h-[40vh] flex flex-col items-center py-3 overflow-y-scroll">
             {data &&
-              data.reviews.map((item, index) => (
+              data.reviews?.map((item, index) => (
                 <div className="w-full flex my-2">
                   <img
                     src={`${backend_url}/${item?.user?.avatar}`}
@@ -330,7 +330,7 @@ const ProductDetailsInfo = (
                 </div>
               ))}
             <div className="w-full flex justify-center">
-              {data && data.reviews.length === 0 && (
+              {data && data.reviews?.length === 0 && (
                 <h5>No Reviews have for this product!</h5>
               )}
             </div>
@@ -342,7 +342,7 @@ const ProductDetailsInfo = (
               <Link to={`/shop/preview/${data.shop._id}`}>
                 <div className="flex items-center">
                   <img
-                    src={`${backend_url}/${data?.shop?.avatar}`}
+                    src={`${backend_url}/${data.shop.avatar}`}
                     className="w-[50px] h-[50px] rounded-full"
                     alt=""
                   />

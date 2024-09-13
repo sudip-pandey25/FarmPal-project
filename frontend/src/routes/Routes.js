@@ -11,11 +11,12 @@ import ProfilePage from "../pages/ProfilePage";
 import CheckoutPage from "../pages/CheckoutPage";
 import ShopCreate from "../pages/ShopCreate";
 import SellerActivationPage from "../pages/SellerActivationPage";
-import ShopLoginPage from "../pages/ShopLoginPage.jsx";
-import PayementPage from "../pages/PayementPage.jsx";
-import OrderSuccessPage from "../pages/OrderSuccessPage.jsx";
-import OrderDetailsPage from "../pages/OrderDetailsPage.jsx";
-import TrackOrderPage from "../pages/TrackOrderPage.jsx"
+import ShopLoginPage from "../pages/ShopLoginPage";
+import PayementPage from "../pages/PayementPage";
+import OrderSuccessPage from "../pages/OrderSuccessPage";
+import OrderDetailsPage from "../pages/OrderDetailsPage";
+import TrackOrderPage from "../pages/TrackOrderPage"
+import UserInbox from "../pages/UserInbox.jsx"
 
 export {
   LoginPage,
@@ -36,4 +37,5 @@ export {
   OrderSuccessPage,
   OrderDetailsPage,
   TrackOrderPage,
+  UserInbox,
 };

@@ -7,7 +7,10 @@ import ShopAllCoupouns from "../pages/Shop/ShopAllCoupouns";
 import ShopPreviewPage from "../pages/Shop/ShopPreviewPage";
 import ShopAllOrders from "../pages/Shop/ShopAllOrders";
 import ShopOrderDetails from "../pages/Shop/ShopOrderDetails";
-import ShopAllRefunds from "../pages/Shop/ShopAllRefunds.jsx"
+import ShopAllRefunds from "../pages/Shop/ShopAllRefunds";
+import ShopSettingPage from "../pages/Shop/ShopSettingPage";
+import ShopWithdrawMoneyPage from "../pages/Shop/ShopWithdrawMoneyPage.jsx";
+import ShopInboxPage from "../pages/Shop/ShopInboxPage.jsx"
 
 export {
   ShopDashBoardPage,
@@ -20,4 +23,7 @@ export {
   ShopAllOrders,
   ShopOrderDetails,
   ShopAllRefunds,
+  ShopSettingPage,
+  ShopWithdrawMoneyPage,
+  ShopInboxPage,
 };
