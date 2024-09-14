@@ -5,6 +5,7 @@ import Header from "../components/Layout/Header";
 import ProductDetails from "../components/Products/ProductDetails";
 import SuggestedProduct from "../components/Products/SuggestedProduct";
 import { useSelector } from "react-redux";
+import SimilarProducts from "../components/Products/SimilarProducts.jsx"
 
 const ProductDetailsPage = () => {
   const { allProducts } = useSelector((state) => state.products);
@@ -32,6 +33,13 @@ const ProductDetailsPage = () => {
           !eventData && (
             <>
             {data && <SuggestedProduct data={data} />}
+            </>
+          )
+        }
+         {
+          !eventData && (
+            <>
+            {data && <SimilarProducts data={data} />}
             </>
           )
         }
