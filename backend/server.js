@@ -19,8 +19,10 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
 connectDatabase();
 
 //create server
-const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is running on http://localhost:${process.env.PORT}`);
+const server = app.listen(farm - pal - project.vercel.app, () => {
+  console.log(
+    `Server is running on http://localhost:farm-pal-project.vercel.app`
+  );
 });
 
 process.on("unhandledRejection", (err) => {
