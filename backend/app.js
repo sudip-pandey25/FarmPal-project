@@ -1,3 +1,5 @@
+const path = require("path");
+const fileURLToPath = require("url");
 const express = require("express");
 const ErrorHandler = require("./middleware/error");
 const app = express();
@@ -5,9 +7,12 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: [`${req.protocol}://${req.get("host")}`],
   credentials: true,
 };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 app.use(cookieParser());
@@ -43,7 +48,11 @@ app.use("/api/v2/order", order);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
 app.use("/api/v2/conversation", conversation);
-app.use("/api/v2/message", message)
+app.use("/api/v2/message", message);
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.get("*", (_, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+});
 
 //Error Handling
 app.use(ErrorHandler);

@@ -39,7 +39,9 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationURL = `http://localhost:3000/activation/${activationToken}`;
+    const activationURL = `${req.protocol}://${req.get(
+      "host"
+    )}/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -395,7 +397,6 @@ router.delete(
           new ErrorHandler("User is not available with this id", 400)
         );
       }
-      
 
       await User.findByIdAndDelete(req.params.id);
 
